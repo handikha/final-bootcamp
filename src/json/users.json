@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "uuid": "a1b2c3d4",
+    "email": "contoh@email.com",
+    "status": 1,
+    "role": 1,
+    "gender": "male",
+    "profile": {
+      "name": "John Doe",
+      "profilePicture": "admin.jpg",
+      "birthdate": "1990-05-15"
+    },
+    "address": {
+      "address": "Jl. Indonesia 1",
+      "province": "Jakarta",
+      "city": "Jakarta Pusat",
+      "district": "Senayan",
+      "postalCode": "23456"
+    }
+  },
+  {
+    "id": 2,
+    "uuid": "e5f6g7h8",
+    "email": "user2@email.com",
+    "status": 1,
+    "role": 2,
+    "gender": "female",
+    "profile": {
+      "name": "Jane Smith",
+      "profilePicture": "url_ke_foto_profil",
+      "birthdate": "1988-11-03"
+    },
+    "address": {
+      "address": "Jl. Indonesia 2",
+      "province": "Banten",
+      "city": "Tangerang",
+      "district": "Pakulonan",
+      "postalCode": "12345"
+    }
+  }
+]

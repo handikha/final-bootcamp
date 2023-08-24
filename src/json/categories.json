@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Obat-obatan",
+    "image": "obat.svg"
+  },
+  {
+    "id": 2,
+    "name": "Nutrisi",
+    "image": "nutrisi.svg"
+  },
+  {
+    "id": 3,
+    "name": "Herbal",
+    "image": "herbal.svg"
+  },
+  {
+    "id": 4,
+    "name": "Vitamin & Suplemen",
+    "image": "vitamin.svg"
+  },
+  {
+    "id": 5,
+    "name": "Alat Kesehatan",
+    "image": "alat-kesehatan.svg"
+  },
+  {
+    "id": 6,
+    "name": "Perawatan Tubuh",
+    "image": "perawatan-tubuh.svg"
+  },
+  {
+    "id": 7,
+    "name": "Ibu & Anak",
+    "image": "ibu-dan-anak.svg"
+  }
+]
