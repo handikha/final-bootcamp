@@ -6,7 +6,7 @@ import Button from "../Button";
 
 export default function Footer() {
   return (
-    <div className="grid grid-cols-4 gap-20 px-16 py-8">
+    <div className="grid grid-cols-1 gap-x-20 gap-y-8 px-8 py-8 md:px-16 lg:grid-cols-4">
       <div className="">
         <img src={Logo} alt="" className="mb-8 w-48" />
         <Button isLink className="footer-item flex items-center gap-2">

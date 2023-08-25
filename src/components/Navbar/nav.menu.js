@@ -20,12 +20,13 @@ export default function NavMenu({
   setIsNavActive,
   isNavActive,
   user,
+  handleShowModal,
 }) {
   // SCROLL AND RESIZE HANDLER
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
-      setIsScrolled(scrollTop > 40);
+      setIsScrolled(scrollTop > 400);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -122,30 +123,27 @@ export default function NavMenu({
           )}
         </AnimatePresence>
 
-        {isLogin ? (
-          <Button
-            path={user?.role === 1 ? "/admin/dashboard" : "/cashier"}
-            className={`nav-menu-item flex items-center gap-3`}
-            isLink
-            onClick={closeNavMenu}
-          >
-            {user?.role === 1 ? "Dashboard" : "Products"}
-            <HiOutlineSquares2X2 className="text-xl md:hidden" />
-          </Button>
-        ) : (
-          <div className="flex w-full flex-col gap-4 lg:w-fit lg:flex-row">
+        {!isLogin && (
+          <div className="flex w-full flex-col gap-4 md:flex-row lg:w-fit">
             <Button
               isButton
               isPrimaryOutline
               title="Masuk"
               className="w-full"
+              onClick={() => handleShowModal("login")}
             />
-            <Button isButton isPrimary title="Daftar" className="w-full" />
+            <Button
+              isButton
+              isPrimary
+              title="Daftar"
+              className="w-full"
+              onClick={() => handleShowModal("register")}
+            />
           </div>
         )}
       </div>
 
-      <div className={`flex items-center gap-8`}>
+      <div className={`flex items-center gap-4 md:gap-8`}>
         {isLogin && (
           <>
             <div className="relative">
@@ -247,24 +245,22 @@ export default function NavMenu({
           </>
         )}
 
-        {!isLogin && (
-          <div className="sidebar-button">
-            {isNavActive ? (
-              <span onClick={closeNavMenu} className="text-light ">
-                <HiX />
-              </span>
-            ) : (
-              <span
-                onClick={() => {
-                  openNavMenu();
-                  closeProfileMenu();
-                }}
-              >
-                <HiMenu />
-              </span>
-            )}
-          </div>
-        )}
+        <div className="sidebar-button">
+          {isNavActive ? (
+            <span onClick={closeNavMenu} className="text-white">
+              <HiX />
+            </span>
+          ) : (
+            <span
+              onClick={() => {
+                openNavMenu();
+                closeProfileMenu();
+              }}
+            >
+              <HiMenu />
+            </span>
+          )}
+        </div>
       </div>
     </>
   );

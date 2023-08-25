@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-50 font-public;
+    @apply bg-slate-50 font-public text-dark;
   }
 
   .container {
@@ -48,6 +48,7 @@
 
 @layer components {
   @import url("./components/Navbar/index.css");
+  @import url("./components/ToTop/index.css");
   /* @import url("./components/Card/index.css");
   @import url("./components/Input/index.css"); */
 }

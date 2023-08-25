@@ -10,9 +10,9 @@ export default function Payment() {
     "shopeepay",
   ];
   return (
-    <div className="w-full bg-slate-200/70 py-6">
+    <div className="w-full bg-slate-200/70 px-6 py-6">
       <h3 className="text-center font-bold text-dark">Metode Pembayaran</h3>
-      <div className="flex flex-wrap items-center justify-center gap-12">
+      <div className="mt-4  flex flex-wrap items-center justify-center gap-12">
         {payments.map((payment, index) => (
           <img
             key={index}
