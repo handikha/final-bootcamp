@@ -16,9 +16,9 @@ export default function Payment() {
         {payments.map((payment, index) => (
           <img
             key={index}
-            src={require(`../../../assets/payment/${payment}.png`)}
+            src={require(`../../assets/payment/${payment}.png`)}
             alt=""
-            className="w-20 lg:w-28"
+            className="w-14 sm:w-20 lg:w-28"
           />
         ))}
       </div>

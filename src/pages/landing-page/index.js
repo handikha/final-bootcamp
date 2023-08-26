@@ -1,13 +1,13 @@
-import categories from "../../../json/categories.json";
-import products from "../../../json/products.json";
-import Card from "../../../components/Card";
+import categories from "../../json/categories.json";
+import products from "../../json/products.json";
+import Card from "../../components/Card";
 import Categories from "./component.categories";
-import Button from "../../../components/Button";
+import Button from "../../components/Button";
 import Feature from "./component.feature";
 import Hero from "./component.hero";
 import Guarantee from "./component.guarantee";
 import Payment from "./component.payment";
-import Footer from "../../../components/Footer";
+import Footer from "../../components/Footer";
 
 export default function LandingPage() {
   return (
@@ -22,7 +22,12 @@ export default function LandingPage() {
         <div className="mt-4">
           <div className="flex items-center justify-between">
             <h3 className="title text-2xl">Popular Product</h3>
-            <Button isLink title="Lihat Semua" className="see-all" />
+            <Button
+              isLink
+              path="/products"
+              title="Lihat Semua"
+              className="see-all"
+            />
           </div>
 
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">

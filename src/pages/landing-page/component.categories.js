@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
-import Button from "../../../components/Button";
+import Button from "../../components/Button";
 
 export default function Categories({ categories }) {
   const [categoryScroll, setCategoryScroll] = useState(0);
@@ -61,10 +61,7 @@ export default function Categories({ categories }) {
               className="flex w-48 flex-shrink-0 cursor-pointer flex-col items-center justify-center rounded-lg px-3 py-3 shadow-lg hover:bg-slate-100 md:py-6"
             >
               <div className="h-8 w-8 md:h-10 md:w-10">
-                <img
-                  src={require(`../../../assets/${category.image}`)}
-                  alt=""
-                />
+                <img src={require(`../../assets/${category.image}`)} alt="" />
               </div>
               <p className="text-sm font-bold text-dark md:text-base">
                 {category.name}

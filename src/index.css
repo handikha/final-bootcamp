@@ -48,7 +48,7 @@
 
 @layer components {
   @import url("./components/Navbar/index.css");
-  @import url("./components/ToTop/index.css");
+  @import url("./components/UploadRecipeButton/index.css");
   /* @import url("./components/Card/index.css");
   @import url("./components/Input/index.css"); */
 }

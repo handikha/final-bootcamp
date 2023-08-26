@@ -1,7 +1,9 @@
-import HeroImage from "../../../assets/hero.svg";
-import Button from "../../../components/Button";
+import { useNavigate } from "react-router-dom";
+import HeroImage from "../../assets/hero.svg";
+import Button from "../../components/Button";
 
 export default function Hero() {
+  const navigate = useNavigate();
   return (
     <>
       <h3 className="title lg:hidden">Punya resep Dokter?</h3>
@@ -23,6 +25,7 @@ export default function Hero() {
           <Button
             isButton
             isPrimary
+            onClick={() => navigate("/upload-recipe")}
             title="Unggah Disini"
             className="mt-2 self-center lg:w-60"
           />

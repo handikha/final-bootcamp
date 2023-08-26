@@ -1,6 +1,6 @@
-import Guarantee1 from "../../../assets/guarantee-1.svg";
-import Guarantee2 from "../../../assets/guarantee-2.svg";
-import Guarantee3 from "../../../assets/guarantee-3.svg";
+import Guarantee1 from "../../assets/guarantee-1.svg";
+import Guarantee2 from "../../assets/guarantee-2.svg";
+import Guarantee3 from "../../assets/guarantee-3.svg";
 
 export default function Guarantee() {
   return (

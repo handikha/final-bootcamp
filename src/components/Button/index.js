@@ -15,7 +15,7 @@ export default function Button(props) {
   props.isPrimary &&
     props.isDisabled &&
     className.push(
-      "bg-primary/80 text-white hover:cursor-default dark:bg-primary/40"
+      "bg-primary/70 text-white hover:cursor-default dark:bg-primary/40"
     );
 
   props.isPrimaryOutline &&
@@ -30,7 +30,7 @@ export default function Button(props) {
     className.push("bg-yellow-500 hover:bg-yellow-600 text-white duration-300");
 
   props.isSecondary &&
-    className.push("bg-light-gray hover:bg-gray text-white duration-300");
+    className.push("bg-slate-400 hover:bg-slate-500 text-white duration-300");
 
   props.isBLock && className.push("w-full");
 

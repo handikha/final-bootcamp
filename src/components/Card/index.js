@@ -1,19 +1,30 @@
 import React from "react";
 import Button from "../Button";
 import formatNumber from "../../utils/formatNumber";
+import { useNavigate } from "react-router-dom";
 
 export default function Card({ id, name, price, image, stock, discount }) {
+  const handleCart = () => {
+    alert(`Produk ${id} berhasil ditambahkan ke keranjang!`);
+  };
+
+  const navigate = useNavigate();
   return (
-    <div className="flex flex-col gap-2 rounded-lg p-5 text-dark shadow-lg">
-      <div className="aspect-[4/3] w-full bg-primary">
-        <img src={image} alt={name} className="h-full w-full object-cover" />
+    <div
+      className="group flex cursor-pointer flex-col gap-2 rounded-lg p-3 text-dark shadow-lg"
+      onClick={() => navigate(`/products/${id}`)}
+    >
+      <div className="aspect-[4/3] w-full overflow-hidden rounded-md bg-primary">
+        <img
+          src={image}
+          alt={name}
+          className="h-full w-full object-cover duration-300 group-hover:scale-110"
+        />
       </div>
-      <Button
-        isLink
-        className="text-sm font-bold uppercase duration-300 hover:text-primary lg:text-base"
-      >
+
+      <h3 className="text-sm font-bold uppercase duration-300 group-hover:text-primary lg:text-base">
         {name}
-      </Button>
+      </h3>
       {discount ? (
         <div className="mt-auto flex items-center gap-2">
           <span className="rounded-md border border-red-400 px-2 py-1 text-xs font-semibold text-red-400">
@@ -30,8 +41,7 @@ export default function Card({ id, name, price, image, stock, discount }) {
         Rp.{" "}
         {discount
           ? formatNumber(((100 - discount) * price) / 100)
-          : formatNumber(price)}{" "}
-        / <span className="font-medium">Pack</span>
+          : formatNumber(price)}
       </h3>
       <Button
         isButton
@@ -39,6 +49,7 @@ export default function Card({ id, name, price, image, stock, discount }) {
         isBLock
         title="Keranjang"
         className="font-semibold"
+        onClick={handleCart}
       />
     </div>
   );

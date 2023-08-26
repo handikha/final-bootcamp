@@ -5,7 +5,12 @@
     "price": 15000,
     "image": "https://source.unsplash.com/600x400?vitamin",
     "stock": 100,
-    "discount": 0
+    "discount": 0,
+    "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugit quia numquam non, quos labore quis rerum commodi reprehenderit magni libero officia, sequi asperiores ipsam odio totam voluptatem officiis tenetur.",
+    "category": {
+      "id": 1,
+      "name": "Product Category"
+    }
   },
   {
     "id": 2,
@@ -13,7 +18,12 @@
     "price": 25000,
     "image": "https://source.unsplash.com/600x400?vitamin",
     "stock": 50,
-    "discount": 10
+    "discount": 10,
+    "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugit quia numquam non, quos labore quis rerum commodi reprehenderit magni libero officia, sequi asperiores ipsam odio totam voluptatem officiis tenetur.",
+    "category": {
+      "id": 1,
+      "name": "Product Category"
+    }
   },
   {
     "id": 3,
@@ -21,7 +31,12 @@
     "price": 18000,
     "image": "https://source.unsplash.com/600x400?vitamin",
     "stock": 75,
-    "discount": 0
+    "discount": 0,
+    "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugit quia numquam non, quos labore quis rerum commodi reprehenderit magni libero officia, sequi asperiores ipsam odio totam voluptatem officiis tenetur.",
+    "category": {
+      "id": 1,
+      "name": "Product Category"
+    }
   },
   {
     "id": 4,
@@ -29,7 +44,12 @@
     "price": 12000,
     "image": "https://source.unsplash.com/600x400?vitamin",
     "stock": 60,
-    "discount": 5
+    "discount": 5,
+    "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugit quia numquam non, quos labore quis rerum commodi reprehenderit magni libero officia, sequi asperiores ipsam odio totam voluptatem officiis tenetur.",
+    "category": {
+      "id": 1,
+      "name": "Product Category"
+    }
   },
   {
     "id": 5,
@@ -37,7 +57,12 @@
     "price": 30000,
     "image": "https://source.unsplash.com/600x400?vitamin",
     "stock": 40,
-    "discount": 0
+    "discount": 0,
+    "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugit quia numquam non, quos labore quis rerum commodi reprehenderit magni libero officia, sequi asperiores ipsam odio totam voluptatem officiis tenetur.",
+    "category": {
+      "id": 1,
+      "name": "Product Category"
+    }
   },
   {
     "id": 6,
@@ -45,7 +70,12 @@
     "price": 18000,
     "image": "https://source.unsplash.com/600x400?vitamin",
     "stock": 90,
-    "discount": 15
+    "discount": 15,
+    "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugit quia numquam non, quos labore quis rerum commodi reprehenderit magni libero officia, sequi asperiores ipsam odio totam voluptatem officiis tenetur.",
+    "category": {
+      "id": 1,
+      "name": "Product Category"
+    }
   },
   {
     "id": 7,
@@ -53,7 +83,12 @@
     "price": 22000,
     "image": "https://source.unsplash.com/600x400?vitamin",
     "stock": 30,
-    "discount": 0
+    "discount": 0,
+    "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugit quia numquam non, quos labore quis rerum commodi reprehenderit magni libero officia, sequi asperiores ipsam odio totam voluptatem officiis tenetur.",
+    "category": {
+      "id": 1,
+      "name": "Product Category"
+    }
   },
   {
     "id": 8,
@@ -61,22 +96,63 @@
     "price": 28000,
     "image": "https://source.unsplash.com/600x400?vitamin",
     "stock": 55,
-    "discount": 10
+    "discount": 10,
+    "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugit quia numquam non, quos labore quis rerum commodi reprehenderit magni libero officia, sequi asperiores ipsam odio totam voluptatem officiis tenetur.",
+    "category": {
+      "id": 1,
+      "name": "Product Category"
+    }
   },
   {
     "id": 9,
     "name": "Salbutamol Inhaler",
     "price": 35000,
-    "image": "url_ke_gambar_produk",
+    "image": "https://source.unsplash.com/600x400?vitamin",
     "stock": 25,
-    "discount": 0
+    "discount": 0,
+    "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugit quia numquam non, quos labore quis rerum commodi reprehenderit magni libero officia, sequi asperiores ipsam odio totam voluptatem officiis tenetur.",
+    "category": {
+      "id": 1,
+      "name": "Product Category"
+    }
   },
   {
     "id": 10,
     "name": "Guaifenesin Syrup",
     "price": 15000,
-    "image": "url_ke_gambar_produk",
+    "image": "https://source.unsplash.com/600x400?vitamin",
     "stock": 70,
-    "discount": 0
+    "discount": 0,
+    "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugit quia numquam non, quos labore quis rerum commodi reprehenderit magni libero officia, sequi asperiores ipsam odio totam voluptatem officiis tenetur.",
+    "category": {
+      "id": 1,
+      "name": "Product Category"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Guaifenesin Syrup",
+    "price": 15000,
+    "image": "https://source.unsplash.com/600x400?vitamin",
+    "stock": 70,
+    "discount": 0,
+    "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugit quia numquam non, quos labore quis rerum commodi reprehenderit magni libero officia, sequi asperiores ipsam odio totam voluptatem officiis tenetur.",
+    "category": {
+      "id": 1,
+      "name": "Product Category"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Guaifenesin Syrup",
+    "price": 15000,
+    "image": "https://source.unsplash.com/600x400?vitamin",
+    "stock": 70,
+    "discount": 0,
+    "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugit quia numquam non, quos labore quis rerum commodi reprehenderit magni libero officia, sequi asperiores ipsam odio totam voluptatem officiis tenetur.",
+    "category": {
+      "id": 1,
+      "name": "Product Category"
+    }
   }
 ]

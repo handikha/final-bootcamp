@@ -12,6 +12,7 @@ const Input = ({
   label,
   className,
   errorInput,
+  onBlur,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -24,7 +25,6 @@ const Input = ({
         : "focus:ring-primary/50 dark:focus:ring-primary border-slate-300 focus:border-primary"
     }`
   );
-  // rounded-md border py-1 focus:outline-none focus:ring-2 focus:ring-primary/50
 
   if (type === "password") {
     return (
@@ -41,6 +41,7 @@ const Input = ({
             autoFocus={autoFocus}
             value={value}
             onChange={onChange}
+            onBlur={onBlur}
           />
           <span
             className="absolute bottom-1/2 right-2 flex aspect-square h-1/2 translate-y-1/2 cursor-pointer select-none items-center justify-center"
@@ -73,6 +74,7 @@ const Input = ({
             placeholder={placeholder}
             autoFocus={autoFocus}
             onChange={onChange}
+            onBlur={onBlur}
           ></textarea>
         </div>
       </>
@@ -93,6 +95,7 @@ const Input = ({
           placeholder={placeholder}
           autoFocus={autoFocus}
           onChange={onChange}
+          onBlur={onBlur}
         />
       </div>
     </>

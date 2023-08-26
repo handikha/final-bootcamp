@@ -1,15 +1,17 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HiMagnifyingGlass, HiXMark } from "react-icons/hi2";
-import ToTop from "../ToTop";
+import UploadRecipeButton from "../UploadRecipeButton";
 import Modal from "../Modal";
 import NavBrand from "./nav.brand";
 import NavMenu from "./nav.menu";
 import LogoIcon from "../../assets/logoIcon.png";
 import Button from "../Button";
 import Input from "../Input";
+import { useLocation } from "react-router-dom";
 
-export default function Navbar({ user }) {
+export default function Navbar({ user, isLogin }) {
+  const { pathname } = useLocation();
   // SEARCH HANDLER
   const searchRef = useRef(null);
   const handleSearch = (event) => {
@@ -20,10 +22,20 @@ export default function Navbar({ user }) {
     searchRef.current.value = "";
   };
 
-  // LOGIN HANDLER
-  const [isLogin, setIsLogin] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isNavActive, setIsNavActive] = useState(false);
+  // SCROLL AND RESIZE HANDLER
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      setIsScrolled(scrollTop > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [setIsScrolled]);
 
   // MODAL HANDLER
   const [showModal, setShowModal] = useState({ show: false, context: "" });
@@ -54,11 +66,11 @@ export default function Navbar({ user }) {
 
             <div className="block lg:hidden">
               <a href="/">
-                <img src={LogoIcon} alt="" className="w-14" />
+                <img src={LogoIcon} alt="" className="w-10" />
               </a>
             </div>
 
-            <form className="relative w-full lg:w-3/5" onSubmit={handleSearch}>
+            <form className="relative flex-grow" onSubmit={handleSearch}>
               <input
                 ref={searchRef}
                 type="text"
@@ -77,26 +89,21 @@ export default function Navbar({ user }) {
               </button>
             </form>
 
-            <div className="nav-menu-wrapper">
+            <div
+              className={`nav-menu-wrapper justify-between ${
+                isLogin && "lg:w-1/3"
+              }`}
+            >
               <NavMenu
                 isLogin={isLogin}
-                setIsLogin={setIsLogin}
                 handleShowModal={handleShowModal}
                 setIsScrolled={setIsScrolled}
-                setIsNavActive={setIsNavActive}
-                isNavActive={isNavActive}
                 user={user}
               />
             </div>
           </div>
         </motion.div>
       </AnimatePresence>
-
-      <ToTop
-        className={
-          isScrolled && !isNavActive ? "translate-y-0" : "translate-y-[250%]"
-        }
-      />
 
       <Modal
         showModal={showModal.show}
@@ -181,6 +188,12 @@ export default function Navbar({ user }) {
           </>
         )}
       </Modal>
+
+      {pathname === "/" && (
+        <UploadRecipeButton
+          className={isScrolled ? "translate-y-0" : "translate-y-[250%]"}
+        />
+      )}
     </>
   );
 }

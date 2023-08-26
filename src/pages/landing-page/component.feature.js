@@ -1,5 +1,5 @@
-import Feature1 from "../../../assets/feature-1.svg";
-import Feature2 from "../../../assets/feature-2.svg";
+import Feature1 from "../../assets/feature-1.svg";
+import Feature2 from "../../assets/feature-2.svg";
 
 export default function Feature() {
   return (
