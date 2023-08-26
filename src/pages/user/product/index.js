@@ -39,10 +39,6 @@ export default function Product() {
     }
   };
 
-  useEffect(() => {
-    window.scroll({ top: 0 });
-  }, []);
-
   return (
     <>
       <div className="container py-24">

@@ -9,6 +9,7 @@ export default function Card({ id, name, price, image, stock, discount }) {
   };
 
   const navigate = useNavigate();
+
   return (
     <div
       className="group flex cursor-pointer flex-col gap-2 rounded-lg p-3 text-dark shadow-lg"
