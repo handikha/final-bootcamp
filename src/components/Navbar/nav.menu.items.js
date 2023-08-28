@@ -51,6 +51,8 @@ export default function NavMenuItems({ user }) {
       </Button>
 
       <Button
+        isLink
+        path="/profile"
         className={`flex flex-col items-center gap-1 text-xs lg:hidden ${
           pathname === "/profile" ? "text-primary" : "text-slate-500"
         }`}

@@ -58,6 +58,8 @@ export default function Button(props) {
       className={className.join(" ")}
       type={props.type ? props.type : "button"}
       onClick={(e) => {
+        e.preventDefault();
+
         e.stopPropagation();
         onClick();
       }}

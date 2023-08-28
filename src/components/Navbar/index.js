@@ -10,7 +10,7 @@ import Button from "../Button";
 import Input from "../Input";
 import { useLocation } from "react-router-dom";
 
-export default function Navbar({ user, isLogin }) {
+export default function Navbar({ user, isLogin, setIsLogin }) {
   const { pathname } = useLocation();
   // SEARCH HANDLER
   const searchRef = useRef(null);
@@ -44,6 +44,7 @@ export default function Navbar({ user, isLogin }) {
 
     document.body.style.overflow = "hidden";
   };
+
   const handleCloseModal = () => {
     setShowModal({ show: false, context: "" });
 
@@ -96,6 +97,7 @@ export default function Navbar({ user, isLogin }) {
             >
               <NavMenu
                 isLogin={isLogin}
+                setIsLogin={setIsLogin}
                 handleShowModal={handleShowModal}
                 setIsScrolled={setIsScrolled}
                 user={user}
@@ -108,7 +110,13 @@ export default function Navbar({ user, isLogin }) {
       <Modal
         showModal={showModal.show}
         closeModal={handleCloseModal}
-        title={showModal.context === "login" ? "Login" : "Register"}
+        title={
+          showModal.context === "login"
+            ? "Login"
+            : showModal.context === "register"
+            ? "Register"
+            : "Lupa Password"
+        }
       >
         {showModal.context === "login" ? (
           <>
@@ -137,6 +145,7 @@ export default function Navbar({ user, isLogin }) {
                   isLink
                   title="Lupa password?"
                   className="w-fit text-sm text-primary hover:underline"
+                  onClick={() => handleShowModal("forgot-password")}
                 />
               </>
 
@@ -146,10 +155,14 @@ export default function Navbar({ user, isLogin }) {
                 type="submit"
                 title="Masuk"
                 className="mt-4 py-3"
+                onClick={() => {
+                  setIsLogin(true);
+                  handleCloseModal();
+                }}
               />
             </form>
           </>
-        ) : (
+        ) : showModal.context === "register" ? (
           <>
             <span className="mr-2 text-slate-600">Sudah punya akun?</span>
             <Button
@@ -182,6 +195,27 @@ export default function Navbar({ user, isLogin }) {
                 isPrimary
                 type="submit"
                 title="Daftar"
+                className="mt-4 py-3"
+              />
+            </form>
+          </>
+        ) : (
+          <>
+            <span className="mr-2 text-slate-600">
+              Kami akan mengirimkan email untuk mengubah password kamu
+            </span>
+            <form className="mt-4 flex flex-col gap-4">
+              <Input
+                type="text"
+                label="Email"
+                placeholder="example@email.com"
+              />
+
+              <Button
+                isButton
+                isPrimary
+                type="submit"
+                title="Send"
                 className="mt-4 py-3"
               />
             </form>

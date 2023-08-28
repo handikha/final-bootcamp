@@ -6,6 +6,7 @@ import NavMenuItems from "./nav.menu.items";
 import cart from "../../json/cart.json";
 import { useState } from "react";
 import { HiChevronRight } from "react-icons/hi2";
+import { useNavigate } from "react-router-dom";
 
 export default function NavMenu({
   isLogin,
@@ -13,6 +14,7 @@ export default function NavMenu({
   user,
   handleShowModal,
 }) {
+  const navigate = useNavigate();
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const handleProfileHover = (type) => {
     if (type === "hover") {
@@ -27,7 +29,7 @@ export default function NavMenu({
     <>
       <div
         className={`nav-menu mr-8 w-full ${
-          isLogin && "mr-8 w-full border-primary/70 pr-8 lg:border-r-[1px] "
+          isLogin && "border-primary/70 pr-8 lg:border-r-[1px] "
         }`}
       >
         {!isLogin ? (
@@ -68,6 +70,7 @@ export default function NavMenu({
               className="profile-img-wrapper relative row-start-2 flex w-full items-center gap-2"
               onMouseOver={() => handleProfileHover("hover")}
               onMouseLeave={() => handleProfileHover("leave")}
+              onClick={() => navigate("/profile")}
             >
               <div
                 className={`nav-profile-img hidden aspect-square w-8 cursor-pointer self-center overflow-hidden rounded-full bg-primary md:mb-0 lg:block`}
@@ -99,40 +102,49 @@ export default function NavMenu({
                       originY: 0,
                       originX: 1,
                     }}
-                    className="absolute right-0 top-full rounded-lg bg-slate-100 px-6 py-4 shadow-lg"
+                    className="absolute right-0 top-full pt-2"
                   >
-                    <div className="flex w-72 cursor-pointer items-center gap-2 border-b-2 pb-4">
-                      <div className="h-12 w-12 overflow-hidden rounded-full">
-                        <img
-                          src={
-                            process.env.REACT_APP_IMAGE_URL +
-                            user?.profile.profilePicture
-                          }
-                          alt=""
-                          className="h-full w-full object-cover"
+                    <div className="rounded-lg border bg-slate-100 px-6 py-4 shadow-lg">
+                      <div className="" onClick={() => navigate("/profile")}>
+                        <div className="flex w-72 cursor-pointer items-center gap-2 border-b-2 pb-4">
+                          <div className="h-12 w-12 overflow-hidden rounded-full">
+                            <img
+                              src={
+                                process.env.REACT_APP_IMAGE_URL +
+                                user?.profile.profilePicture
+                              }
+                              alt=""
+                              className="h-full w-full object-cover"
+                            />
+                          </div>
+                          <div className="">
+                            <h3>{user.profile.name}</h3>
+                            <p className="text-sm font-normal text-slate-500">
+                              Cek Profil
+                            </p>
+                          </div>
+                          <div className="ml-auto flex h-8 w-8 items-center justify-center rounded-full shadow-md">
+                            <HiChevronRight className="text-dark" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-2 pt-4">
+                        <Button
+                          isLink
+                          title="Pengaturan"
+                          className="hover:text-primary"
+                        />
+                        <Button
+                          isLink
+                          title="Keluar"
+                          className="hover:text-primary"
+                          onClick={() => {
+                            setIsLogin(false);
+                            handleProfileHover("leave");
+                          }}
                         />
                       </div>
-                      <div className="">
-                        <h3>{user.profile.name}</h3>
-                        <p className="text-sm font-normal text-slate-500">
-                          Cek Profil
-                        </p>
-                      </div>
-                      <div className="ml-auto flex h-8 w-8 items-center justify-center rounded-full shadow-md">
-                        <HiChevronRight className="text-dark" />
-                      </div>
-                    </div>
-                    <div className="flex flex-col gap-2 pt-4">
-                      <Button
-                        isLink
-                        title="Pengaturan"
-                        className="hover:text-primary"
-                      />
-                      <Button
-                        isLink
-                        title="Keluar"
-                        className="hover:text-primary"
-                      />
                     </div>
                   </motion.div>
                 )}

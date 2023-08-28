@@ -12,7 +12,7 @@ export default function Card({ id, name, price, image, stock, discount }) {
 
   return (
     <div
-      className="group flex cursor-pointer flex-col gap-2 rounded-lg p-3 text-dark shadow-lg"
+      className="group flex cursor-pointer flex-col gap-2 rounded-lg border p-3 text-dark shadow-lg"
       onClick={() => navigate(`/products/${id}`)}
     >
       <div className="aspect-[4/3] w-full overflow-hidden rounded-md bg-primary">

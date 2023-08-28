@@ -8,16 +8,16 @@ import AllProducts from "./pages/user/all-products";
 import Product from "./pages/user/product";
 import Cart from "./pages/user/cart";
 import ScrollToTop from "./components/ScrollToTop";
+import Profile from "./pages/user/profile";
 
 function App() {
   const user = users.find((data) => data.id === 1);
 
   // LOGIN HANDLER
   const [isLogin, setIsLogin] = useState(true);
-
   return (
     <>
-      <Navbar user={user} isLogin={isLogin} />
+      <Navbar user={user} isLogin={isLogin} setIsLogin={setIsLogin} />
 
       <ScrollToTop />
       <Routes>
@@ -26,6 +26,7 @@ function App() {
         <Route path="/products/:id" element={<Product />} />
         <Route path="/upload-recipe" element={<UploadRecipe />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </>
   );
