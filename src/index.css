@@ -21,10 +21,6 @@
     @apply text-sm font-bold text-primary duration-300 hover:text-teal-700 lg:text-base;
   }
 
-  .footer-item {
-    @apply py-2 font-semibold text-dark duration-300 hover:text-primary;
-  }
-
   /*::-webkit-scrollbar {
     @apply h-0 w-2;
   }
@@ -49,6 +45,7 @@
 @layer components {
   @import url("./components/Navbar/index.css");
   @import url("./components/UploadRecipeButton/index.css");
+  @import url("./components/Footer/index.css");
   /* @import url("./components/Card/index.css");
   @import url("./components/Input/index.css"); */
 }

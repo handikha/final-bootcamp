@@ -39,6 +39,7 @@ export default function Navbar({ user, isLogin, setIsLogin }) {
 
   // MODAL HANDLER
   const [showModal, setShowModal] = useState({ show: false, context: "" });
+  
   const handleShowModal = (context) => {
     setShowModal({ show: true, context });
 

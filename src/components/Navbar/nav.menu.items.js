@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import Button from "../Button";
 
 import { HiDocumentText, HiHome, HiMiniSquares2X2 } from "react-icons/hi2";
-import { PiHeadsetFill } from "react-icons/pi";
+import { BiSolidDiscount } from "react-icons/bi";
 
 export default function NavMenuItems({ user }) {
   const { pathname } = useLocation();
@@ -46,8 +46,8 @@ export default function NavMenuItems({ user }) {
           pathname === "/help" ? "text-primary" : "text-slate-500"
         }`}
       >
-        <PiHeadsetFill className="text-2xl" />
-        <span>Bantuan</span>
+        <BiSolidDiscount className="text-2xl" />
+        <span>Promo</span>
       </Button>
 
       <Button
