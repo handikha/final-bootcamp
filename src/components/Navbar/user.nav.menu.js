@@ -1,7 +1,7 @@
 import Button from "../Button";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaCartShopping } from "react-icons/fa6";
-import NavMenuItems from "./nav.menu.items";
+import UserNavMenuItems from "./user.nav.menu.items";
 
 import cart from "../../json/cart.json";
 import { useState } from "react";
@@ -50,7 +50,7 @@ export default function NavMenu({
             />
           </div>
         ) : (
-          <NavMenuItems user={user} />
+          <UserNavMenuItems user={user} />
         )}
       </div>
 

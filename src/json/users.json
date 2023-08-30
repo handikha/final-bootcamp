@@ -28,7 +28,7 @@
     "gender": "female",
     "profile": {
       "name": "Jane Smith",
-      "profilePicture": "url_ke_foto_profil",
+      "profilePicture": "admin.jpg",
       "birthdate": "1988-11-03"
     },
     "address": {
